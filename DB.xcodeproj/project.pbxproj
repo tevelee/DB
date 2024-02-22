@@ -11,6 +11,8 @@
 		A772D1DC2B87860000E8DED2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772D1DB2B87860000E8DED2 /* ContentView.swift */; };
 		A772D1DE2B87860200E8DED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A772D1DD2B87860200E8DED2 /* Assets.xcassets */; };
 		A772D1E22B87860200E8DED2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A772D1E12B87860200E8DED2 /* Preview Assets.xcassets */; };
+		A772D1EA2B87864400E8DED2 /* DuckDB in Frameworks */ = {isa = PBXBuildFile; productRef = A772D1E92B87864400E8DED2 /* DuckDB */; };
+		A772D1EC2B87864B00E8DED2 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772D1EB2B87864A00E8DED2 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		A772D1DD2B87860200E8DED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A772D1DF2B87860200E8DED2 /* DB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DB.entitlements; sourceTree = "<group>"; };
 		A772D1E12B87860200E8DED2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A772D1EB2B87864A00E8DED2 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		A772D1EF2B87907E00E8DED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A772D1EA2B87864400E8DED2 /* DuckDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +57,10 @@
 		A772D1D82B87860000E8DED2 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				A772D1EF2B87907E00E8DED2 /* Info.plist */,
 				A772D1D92B87860000E8DED2 /* DBApp.swift */,
 				A772D1DB2B87860000E8DED2 /* ContentView.swift */,
+				A772D1EB2B87864A00E8DED2 /* Store.swift */,
 				A772D1DD2B87860200E8DED2 /* Assets.xcassets */,
 				A772D1DF2B87860200E8DED2 /* DB.entitlements */,
 				A772D1E02B87860200E8DED2 /* Preview Content */,
@@ -85,6 +92,9 @@
 			dependencies = (
 			);
 			name = DB;
+			packageProductDependencies = (
+				A772D1E92B87864400E8DED2 /* DuckDB */,
+			);
 			productName = DB;
 			productReference = A772D1D62B87860000E8DED2 /* DB.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +123,9 @@
 				Base,
 			);
 			mainGroup = A772D1CD2B87860000E8DED2;
+			packageReferences = (
+				A772D1E82B87864400E8DED2 /* XCRemoteSwiftPackageReference "duckdb-swift" */,
+			);
 			productRefGroup = A772D1D72B87860000E8DED2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A772D1EC2B87864B00E8DED2 /* Store.swift in Sources */,
 				A772D1DC2B87860000E8DED2 /* ContentView.swift in Sources */,
 				A772D1DA2B87860000E8DED2 /* DBApp.swift in Sources */,
 			);
@@ -274,6 +288,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DB/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -312,6 +327,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DB/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -359,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A772D1E82B87864400E8DED2 /* XCRemoteSwiftPackageReference "duckdb-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/duckdb/duckdb-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A772D1E92B87864400E8DED2 /* DuckDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A772D1E82B87864400E8DED2 /* XCRemoteSwiftPackageReference "duckdb-swift" */;
+			productName = DuckDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A772D1CE2B87860000E8DED2 /* Project object */;
 }
